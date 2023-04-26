@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+    <title>Matematyka w Js</title>
+
+    <link rel="stylesheet" href="style-ieee754.css" type="text/css"/>
+
+</head>
+<body>
+
+    <h1>standard liczb IEEE 754</h1>
+
+    <script>
+        document.write(0.1 * 5); document.write("<br/>");
+
+        document.write(0.1 * 3); document.write("<br/>");
+
+        document.write(0.1 + 0.2); document.write("<br/>");
+
+        document.write(Math.pow(2,53)); document.write("<br/>");
+
+        if(0.1 + 0.2 == 0.3) document.write("true<br/>");
+        else document.write("false<br/>");
+
+        var x;
+
+        x = Math.round((0.1 + 0.2)*10) / 10;
+        document.write(x+" Pokazuje 1 liczbe po przecinku <br/>");
+
+        x = Math.round((0.15 * 3)*100) / 100;
+        document.write(x+" Pokazuje 2 liczbe po przecinku<br/>");
+
+        x = 0.15 * 3;
+        x = x.toFixed(2); document.write(x+"<br/><br/>");
+
+        x = 1.005;
+        x = Math.round(x*100) / 100;
+        document.write(x+" zaokragla liczby do najblizjszej wartosci 0..4 w dół lub 5..9 w górę w zaleznosci o 10,100,1000<br/><br/>");
+
+        x = 1.005;
+        x = x.toFixed(2);
+        document.write(x+" zaokrągla zawsze adekwatnie do wartosci w nawiasie czyli ile miejsca po przecinku ma byc<br/><br/>");
+
+        Number.prototype.round = function(miejsc)
+        {
+            return + (Math.round(this+"e+"+miejsc) + "e-"+miejsc);
+        }    
+
+        x = 1.005;
+        x = x.round(2);
+        document.write(x+"<br/>");
+
+    </script>
+
+</body>
+
+
+
+</html>
