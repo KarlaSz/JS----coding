@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portfel inwestycyjny</title>
+    <style>
+        body
+        {
+            background-color: #333;
+            color: #fff;
+            font-size: 28px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+        var pln = 1534.56;
+
+        function wallet()
+        {
+            //jakies wazne taski
+
+            //kryptowaluty jak duzo kupic. widzet ma to pokazac
+
+            if(pln > 0) //robimy przeliczenia tlyko gdy zl sa wieksze od 0
+            {
+                var btc = pln / 40852.58;
+                let eth = pln / 3250.47;
+
+                document.write('BTC= '+ btc +'<br> ETH= '+ eth);
+            }
+            else document.write('Brak środków na zakup kryptowalut');
+            
+
+
+        }
+
+        //wywolanie funkcji
+        wallet();
+
+    </script>
+
+</body>
+</html>
