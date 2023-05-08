@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Strona o zmiennych</title>
+    <style>
+        body
+        {
+            background-color: #333;
+            color: #fff;
+            font-size: 28px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+       const name = "Geralt";
+
+       const gold = 100;
+
+       //name = "Vesemir";
+       //console.log(name);
+
+       const signs = ["Quen", "Igni", "Aard"];
+
+       signs[1] = "Yrden";
+       //console.log(signs[1]);
+
+       const woman = ["Ciri", "Triss", "Yennefer"];
+       //signs = woman;
+
+       //signs.push("Aksji");
+       //console.log(signs);
+
+       const witcher = {
+            name: "Geralt",
+            gold: 100
+       };
+
+       //tutaj wyskoczy blad to const nie pozwala na wiele danych
+       //const trzyma stalosc referencji tego obiektu witcher
+       
+       /*witcher = {
+        name: "Lambert",
+        gold: 400
+       }*/
+
+    
+
+       console.log(witcher);
+
+
+       
+
+
+
+    </script>
+
+</body>
+</html>
