@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Testing modern JS console</title>
+    <style>
+        body
+        {
+            background-color: #333;
+            color: #fff;
+            font-size: 28px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+        //--------------------
+        //zmienne
+
+        let age = 25;
+        let year = 2023;
+
+        console.log(age, year);
+
+        age = 30; // da sie nadpisac zmienne w const
+        console.log(age);
+
+        const points = 100;
+        //points = 50; //nie da sie nadpisac zmienne w const
+        console.log(points);
+
+        var score = 75; //juz malo uzywana, old
+        console.log(score);
+
+
+       //const name = "Geralt";
+       //console.log(name);
+       
+       //if (name === "Geralt")
+       //{console.log("Udało się")}
+       //else if (name === "Karo")
+       //{console.log("to ja")}
+
+
+
+       //--------------------
+
+
+
+       //template strings
+       //const title = '"Najlepsze książki z 2023"';
+       //const author = 'Karo';
+       //const likes = 50;
+
+
+
+       //konkatenacja
+       //let result = 'Blog zwany ' + title + ' by ' + author + ' zebrał w tym miesiącu: ' + likes + ' polubień';
+       //console.log(result);
+
+       //template string
+       //let wynik = `Blog zwany ${title} by ${author} zebrał w tym miesiącu: ${likes} polubień`;
+       //console.log(wynik);
+
+       //to samo,a zapisane w inny sposob. 2 sposob jest latwiejszy przy wielu zmiennych i latwiejszy do odczytu
+        //inna skladnia (syntax)
+
+        //--------------------
+
+        //ARRAY syntax, do kolejkcji numerow lub napisow
+
+        //let ninjas = ['shaun', 'ryu', 'chun-li'];
+        //console.log(ninjas);
+
+        //ninjas[1] = 'ken';
+        //console.log(ninjas[1]);
+
+        //let ages = [20,25, 30,35];
+        //console.log(ages[2]);
+
+       // let random = ['shaun', 'crystal', 30,20]; //rozne wartosci
+        //console.log(random);
+
+        //console.log(ninjas.length); //ile elementow w tablicy
+
+        //ARRAY methods
+        //let results = ninjas.join(',');  //metoda wyswietla czysty tekst, laczy 
+        //console.log(results);  
+
+         //--------------------
+        
+         //undified NaN (Not a Number)
+         
+         //let age;
+
+         //console.log(age, age + 3, `the age is ${age}`);  //undified (nieokreslony) wtedy gdy nie ma zmiennej podanej
+
+         //let age = null;
+
+         //console.log(age, age + 3, `the age is ${age}`); //gdy null to brower czyta jako 0
+
+     
+
+         //Booleans & comparisions - wartosci logiczne i porownania
+
+        // console.log(true, false, "true", "false");
+
+         //metody moga zwraca wartosci logiczne boolean
+         //let email = "karo@gmail.com";
+
+        // let result = email.includes('@');
+
+         //console.log(result);
+
+         //let name = ['karo', 'ela', 'marian'];
+        // let results = name.includes('halina');
+
+        
+         //console.log(results);
+
+
+         //comparitions porownania
+         //let age = 25;
+         /*console.log(age == 25); //jesli to prawdziwe to true
+         console.log(age == 30);
+         console.log(age != 30); //nie jest rowna !=
+         console.log(age > 20); 
+         console.log(age < 20);
+         console.log(age <= 20); //less or equl, mniejsze lub rowne
+         console.log(age >= 20); */
+
+         /* let imie = 'karo';
+         console.log(imie == 'karo');
+         console.log(imie == 'Karo');
+         console.log(imie > 'alicja');  // k jest dalej w alfabecie niz a, wiec k jest wieksze niz a
+         console.log(imie > 'Karo'); //mniejsze litery sa wieksze niz wieksze */
+
+         //strict comparisions (rozne typy nie moha byc rowne)
+
+         //console.log(age === 25); //value and type is rowny
+         //console.log(age === '25');
+
+         //--------------------
+
+         //typy konwersji
+
+         /*let score = '100';
+
+         console.log(score + 1); //konkatenacja i dodaje 1 do 100+1=1001 bo traktuje to jako string
+
+         //score = Number(score); //traktuje zmienna jako numer i zwieksza o 1 wiec 101
+
+         console.log(typeof score); //sprawdzanie typu zmiennej */
+
+    </script>
+
+
+
+</body>
+</html>
