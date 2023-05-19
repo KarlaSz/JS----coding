@@ -1,4 +1,5 @@
 //****operatory == vs === */
+
 // Js to jezyk z dynamicznym typowaniem
 
 // == // KOERACJA TYPOW  - zmiana typu jakiejs wartosci na inny
