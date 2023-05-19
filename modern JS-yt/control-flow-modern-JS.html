@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl,en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Control Flow - petle,warunki logiczne</title>
+    <style>
+        body
+        {
+            background-color: #333;
+            color: #fff;
+            font-size: 28px;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+        //----FOR LOOPS - pętle 
+
+        /*for(let i = 0; i< 5; i++) {
+            console.log('in loop: ', i);
+        }
+
+        w petli najpierw dajemy zmienna, pozniej warunek lgoiczny to sprawdza i na koncu
+        dajemy imkrementacje i ma sie zwiekszac i w konsoli wyswietlaja sie wszystkie wyszstkie ile ich jest
+        
+        console.log('loop finished'); */
+
+        //---//----FOR LOOPS ARRAY
+        /*const names = ['karo', 'mario', 'kazik'];
+
+        //ile imion w tablicy, nie wiemy teoretycznie wiec zaczynamy od 0
+        for(let i = 0 ; i  < names.length; i++) {
+            //console.log(i);
+            //console.log(names[i]);
+            let html = `<div>${names[i]}</div>`;
+            console.log(html);
+        } */
+
+        //----WHILE LOOPS, alternatywa dla for 
+        //najpierw robi warunek,a pozniej instrukcje
+        
+        /*let i = 0;
+        while(i < 5) {
+            console.log('in loop:', i);
+            i++;
+        }*/
+
+        /*const imiona = ['ela', 'bartek', 'kris'];
+        let i = 0;
+        while(i < imiona.length) {
+            console.log(imiona[i]);
+            i++;
+        }
+        */
+
+        //----DO WHILE LOOPS - najpierw wykonaj instrukcje do,a pozniej sprawdz warunek while
+
+        /*let i = 3;
+        do {
+            console.log('values of i is: ', i );
+            i++;
+        }
+        while(i < 5) ; */
+           
+
+
+        //---- IF warunki , wyswietla wartosci tylko GDY warunek spelnia sie i jest true
+        //jesli warunek jest nie prawda to sie po prostu nie wyswietla w consoli
+
+        /*const age = 25;
+
+        if(age > 20) {
+            console.log('you are over 20 years old');
+        }
+
+       const ninjas = ['karo', 'rick', 'barry', 'moti'];
+
+       if(ninjas.length > 3) {
+        console.log('tam jest duzo ninjas');
+       }*/
+
+      /*const password = 'pass'; //za krotkie wiec sie nie wyswietla
+
+       if(password.length >= 12) {
+        console.log('to haslo jest mocne wystarczająco');
+       }
+       else if(password.length >= 8) {
+        console.log('to haslo jest dlugie wystarczająco');
+       }
+       else {
+        console.log('password is not long enoigh');
+       } */
+
+       //--------- logical operator  logiczne operatory OR || and &&
+
+       /*const haslo = 'h@slo12'; //za krotkie wiec sie nie wyswietla
+
+       if(haslo.length >= 12 && haslo.includes('@')) {
+        console.log('to haslo jest mocne wystarczająco');
+       }
+       else if(haslo.length >= 8 || haslo.includes('@')) {
+        console.log('to haslo jest dobre wystarczająco');
+       }
+       else {
+        console.log('password is not long enoigh');
+       } */
+
+       //----logical NOT knot węzeł(!)
+
+       /*let user = false;
+
+       if(!user) {
+        console.log('you must be logged in to continue');
+       }
+
+       console.log(!true);
+       console.log(!false);*/
+
+
+       //switch przeskakuje i czyta kazda linie kodu i mus byc break po tym zeby zamknac i przejsc dalej
+       //inaczej przejdzie dalej bez break ale wyswietla sie wszystkie wartosci 
+       const grade = 'P';
+
+       switch(grade){
+            case 'A':
+                console.log('you get an A!');
+                break;
+            case 'B':
+                console.log('you get an B!');
+                break;
+            case 'C':
+                console.log('you get an C!');
+                break;
+            case 'D':
+                console.log('you get an D!');
+                break;
+            case 'E':
+                console.log('you get an E!');
+                break;
+            default:
+                console.log('not valid grade');
+       }
+       
+
+       
+
+    </script>
+
+
+
+</body>
+</html>
