@@ -84,15 +84,15 @@
 //jest to szybsze i latwiejsze niz klasyczny object new syntax
 
 
-// let facebook = {
-//     name: "Facebook",
-//     ceo: {
-//         firstName: "Mark",
-//         favColor: "blue",
-//         surname: "Zuck"
-//     },
-//     "stock of company": 110
-// };
+let facebook = {
+    name: "Facebook",
+    ceo: {
+        firstName: "Mark",
+        favColor: "blue",
+        surname: "Zuck"
+    },
+    "stock of company": 110
+};
 
 // console.log(facebook);
 // console.log(facebook.ceo.surname);
