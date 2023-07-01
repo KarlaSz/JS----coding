@@ -19,3 +19,9 @@ function odliczanie()
         
         setTimeout("odliczanie()",1000);
         }
+
+
+        
+for (let i = 0, i < 10; i++ ) {
+    console.log(i)
+}
