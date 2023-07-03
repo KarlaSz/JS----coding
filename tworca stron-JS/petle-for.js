@@ -20,9 +20,10 @@
 // ---- > roznice w petlan for (in) i for (of)
 
 
-// for (in) - leci po polach/indeksach tj. 0, 1,a nie po wartosciach 
+// for (in) 
+// - leci po polach/indeksach tj. 0, 1,a nie po wartosciach 
 // - tylko po polach enumerowalnych
-// -  sprawdza tez pola prototypow 
+// -  sprawdza tez pola prototypow (czyli to co nie jest widoczne tez)
 
 const employee = {
     boss: 'Michael',
@@ -61,7 +62,8 @@ const employee = {
 // }
 
 //
-// for(of) - leci po wartosciach
+// for(of) 
+//- leci po wartosciach
 // - nie leci po polach iterowalnych  (obiekty nie sa iterowalne domyslnie)
 // for of nie uzywamy na obiekcie tak jak wyzej
 
