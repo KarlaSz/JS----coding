@@ -18,3 +18,6 @@ document.cookie = 'user=Adam; expires=' + utc
 // jak usunac cookies? 
 //1. pusta wartosc 
 //2. ustawienie daty ktora juz minela
+
+// cookies ma ograniczona pojemnosc ok. 4Kb (4096)
+// czyli np. obiekt 1,3Kb zmiesci sie w cookies ok. 3 razy
