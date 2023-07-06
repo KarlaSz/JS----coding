@@ -28,3 +28,4 @@ if(a && b ) {
 }
 
 console.log(result ?? 'Podaj A i B')
+
