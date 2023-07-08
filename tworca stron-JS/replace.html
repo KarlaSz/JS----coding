@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body { 
+            padding: 20px;
+            font-family: monospace;
+        }
+        div {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>join, replace, replaceAll</h1>
+    <p>Podmiana wyrazów  w tekście</p>
+
+
+    <p>
+        <ol>Sposoby:
+            <li>Replace: podmiana spacji na mysniki, ale 
+                działa to tylko na pierwsza pozycje. Reszty spacji nie podmienia
+            </li><br>
+            <li>Split: rozbicie stringu na poszczegolne wyrazy w tablicy, aby móc polaczyc 
+                elementy pozniej mysnikiem
+            </li><br>
+            <li>Wyrazenie regularne: i przyjmuje ono 2 elementy np. spacja,a drugi parametr to flagi np. g - wszystkie elementy szuka</li>
+            <br>
+            <li>ReplaceAll: szuka fraze wszedzie, na przestrzeni calego stringu</li>
+        </ol>
+    </p>
+
+    <div>
+        <label>Tytuł</label>
+        <input type="text" id="title" placeholder="wpisz coś ze spacją">
+    </div>
+
+    <div>
+        <label>Adres url</label>
+        <input type="text" id="url">
+    </div>
+    
+
+    <script>
+        // pobierz input
+        const inputTitle = document.querySelector('#title');
+        const inputURL = document.querySelector('#url');
+
+        const updateURL = event => {
+            let title = event.target.value;
+            
+            
+            //1. 
+            // title = title.replace(' ', '-');
+            
+
+            //2.
+            // title = title.split(' ').join('-');
+           
+            //3.
+            // const expresion = new RegExp(' ','g'); //dwa parametry z czego 1 to spacja,a drugi to flaga g czyli wszystkie elementy szukamy
+            // title = title.replace(expresion, '-');
+
+            //4. to skrocony zapis 3
+            // title = title.replace(/ /g, '-');
+
+            //5. (ES2021)
+            title = title.replaceAll(' ', '-').toLowerCase();
+
+            inputURL.value = title;
+        }
+        // listener
+        inputTitle.addEventListener('keyup', updateURL);
+    </script>
+</body>
+</html>

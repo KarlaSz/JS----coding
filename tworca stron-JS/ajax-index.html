@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronicznosc</title>
+</head>
+<body>
+
+    <p>Js sam w sobie nie jest asynchorniczny, tylko
+        z przegladarka lub nodem sie robi asynchromiczny
+    </p>
+    <p>Po co jest ansynchronicznosc?
+        <br>
+        Normlanie kod jest czytany linia po linijsce, petle po petli i dopiero wtedy przechodzi
+        do nastepnego wiersza.
+        <br>
+        Asycnhronicznosc rozwiazuje problem zamrozania stron i zamulenia. Tez gdy chcemy
+        cos pobrac ze strony lub dynamicznie zrobic to nieraz trzeba by bylo czekac
+        kilka sekund bo nic by nie dzialalo i w tym celu pojawila sie Asynchronicznoscz
+        zeby cos zadzialo sie w tle,a reszta strony dzialala
+    </p>
+
+    <button>kliknij mnie</button>
+
+    <script>
+
+        document.querySelector('button').addEventListener('click', () => {
+            console.log('udalo sie!')
+        })
+
+        console.log('start')
+
+        for(let i = 0; i < 3; i++) {
+            console.log(i)
+        }
+
+        setTimeout(() => {
+            console.log('this is setTimeOut')
+        }, 2000)
+        
+        console.log('end')
+
+    </script>
+    
+</body>
+</html>
