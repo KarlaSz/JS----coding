@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        h1, h2, h3 {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+       
+        <section>
+            <h1>Planer dla twoich notatek &#128223;</h1>
+            <p>Document Object Model - obiektowy model dokumnetu</p>
+        
+            <p>Dom - to wirtualny obiekt na podst. ktorego generowany jest wyglad i drzewo widoku w consoli jako html, to taki interfejs, inaczej API czyli wejscie do backendu strony</p>
+            <p>Dom ma tez swoj standard ktroa przegladarki musza implementowac </p>
+            <!-- <a href="https://www.kurshtml.edu.pl/html/emotikony,znaki.html">czytaj więcej</a> -->
+        
+        </section>
+        
+        <section class="mt-5">
+            <h2>Kalkulator
+
+            </h2>
+        <div>
+
+        <label for="a"> Podaj pierwszą liczbę:</label> <input type="number" id="a">
+
+        <br><br>
+
+        <label for="b"> Podaj drugą liczbę:</label> <input type="number" id="b">
+
+        <br><br>
+            <input type="btn btn-sm btn-primary mb-3" value="DODAWANIE" onclick="suma()">
+
+        <input type="btn btn-sm btn-primary mb-3" value="ODEJMOWANIE">
+
+        <input type="btn btn-sm btn-primary mb-3" value="MNOŻENIE">
+
+        <input type="btn btn-sm btn-primary mb-3" value="DZIELENIE">
+
+        </div>
+    
+        </section>
+       
+        <section class="mt-5 mb-5">
+            <h2>Manipulacja DOM</h2>
+    
+        <p><b>Lista zadań:</b></p>
+        <ul>
+            <li data-id="0">Idź na spacer<button onclick="removeItem(0)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="1">Zakupy <button onclick="removeItem(1)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="2">Posprzątaj <button onclick="removeItem(2)" class="btn btn-sm btn-danger mb-3">x</button> </li>
+        </ul>
+    
+        <!-- todo: dodac stylowanie -->
+        <form class="card card-body bg-light" id="task-form" action="">
+            <div class="mb-2">
+                <label class="form-label" for="task-title">
+                    Nowe zadanie:
+                </label>
+                <input class="form-control" type="text" name="title" id="task-title">
+                <div class="form-text">Dodaj krotki tekst opis zadania</div>
+            </div>
+            <button class="btn btn-primary" onclick="addItem()" type="button">Dodaj</button>
+        </form>
+    
+        <a href="#">Czytaj więcej</a>
+       </div>
+        </section>
+  </main>
+
+    <!-- wczytaj skrypty -->
+    <script>
+        function addItem() {
+            const ul = document.querySelector('ul');
+
+            const input = document.querySelector('#task-title');
+            const text = input.value;
+            
+            const newItem = document.createElement('li');
+            newItem.innerText = text;
+
+            ul.appendChild(newItem);
+
+            input.value = ''
+        }
+        
+
+        function removeItem(id) {
+            const lis = document.querySelectorAll('ul li');
+            const li = [...lis].find(el => el.dataset.id == id);
+            li.remove();
+            console.log(li);
+        }
+
+
+        </script>
+
+
+</body>
+</html>
