@@ -49,9 +49,9 @@
     
         <p><b>Lista zadań:</b></p>
         <ul>
-            <li data-id="0" onclick="toggleDone()" class="done">Kurs Reach <button onclick="removeItem(0)" class="btn btn-sm btn-danger mb-3">x</button></li>
-            <li data-id="1" onclick="toggleDone()" class="done">Zakupy <button onclick="removeItem(1)" class="btn btn-sm btn-danger mb-3">x</button></li>
-            <li data-id="2" onclick="toggleDone()" class="done">Posprzątać <button onclick="removeItem(2)" class="btn btn-sm btn-danger mb-3">x</button> </li>
+            <li data-id="0" class="done">Kurs Reach <button class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="1" class="done">Zakupy <button class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="2" class="done">Posprzątać <button class="btn btn-sm btn-danger mb-3">x</button> </li>
         </ul>
     
         <!-- todo: dodac stylowanie -->
@@ -63,16 +63,23 @@
                 <input class="form-control" type="text" name="title" id="task-title">
                 <div class="form-text">Dodaj krotki tekst opis zadania</div>
             </div>
-            <button class="btn btn-primary" onclick="addItem()" type="button">Dodaj</button>
+            <button class="btn btn-primary" type="button">Dodaj</button>
         </form>
     
-        <a href="#">Czytaj więcej</a>
+        <a href="https://tworcastron.pl/">Czytaj więcej</a>
        </div>
         </section>
   </main>
 
     <!-- wczytaj skrypty -->
     <script>
+
+        // document.querySelector('#add').onclick = addItem
+        document.querySelector('#task-form').addEventListener('submit', addItem);
+        document.querySelector('a').addEventListener('click', () => {
+            
+        })
+
         function addItem() {
             const ul = document.querySelector('ul');
 
@@ -86,13 +93,13 @@
             const newItem = document.createElement('li');
             newItem.innerText = text;
             newItem.dataset.id = id;
-            newItem.onclick = () => toggleDone();
+            // newItem.onclick = () => toggleDone();
 
             //button
             const button = document.createElement('button');
             button.className = 'btn btn-sm btn-danger';
             button.innerText = 'x';
-            button.onclick = () => removeItem(id);
+            // button.onclick = () => removeItem(id);
             newItem.appendChild(button);
 
             // li > ul
