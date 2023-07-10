@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+    <head>
+
+        <title>
+
+           Zadanie
+
+        </title>
+
+        <meta charset="utf-8">
+
+        <style>
+
+            h1 { text-transform: uppercase;}
+
+        </style>
+
+       
+
+    </head>
+
+    <body>
+
+       <h1>PRoste działania</h1>
+
+        <label for="a"> Podaj pierwszą liczbę:</label> <input type="number" id="a">
+
+        <br><br>
+
+        <label for="b"> Podaj drugą liczbę:</label> <input type="number" id="b">
+
+        <br><br>
+
+        <input type="button" value="DODAWANIE" onclick="suma()">
+
+        <input type="button" value="ODEJMOWANIE">
+
+        <input type="button" value="MNOŻENIE">
+
+        <input type="button" value="DZIELENIE">
+
+ 
+
+        <div id="wynik" style="margin-top: 20px;">
+
+ 
+
+        </div>
+
+        <script>
+
+ 
+
+            function suma()
+
+            {
+
+                var a = document.getElementById("a").value;
+
+                var a = document.getElementById("b").value;
+
+ 
+
+                if (a == "" || b == "")
+
+                {
+
+                    document.getElementById("wynik").innerHTML = "Proszę uzupełnić obie liczby";
+
+                } else
+
+                {
+
+                    a = parseFloat(a);
+
+                    b = parseFloat(b);
+
+ 
+
+                    var suma = a + b;
+
+                    document.getElementById("wynik").innerHTML = "Wynik działania wynosi: " + suma;
+
+                }
+
+ 
+
+            //alert(a);
+
+            //console.log(a);
+
+           
+
+            }
+
+ 
+
+       
+
+ 
+
+        </script>
+
+    </body>
+
+</html>

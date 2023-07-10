@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -7,10 +8,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
  
+=======
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+>>>>>>> 640f7b4f2880d61762a59147a24b031383608269
     <style>
         h1, h2, h3 {
             font-family: monospace;
         }
+<<<<<<< HEAD
 
         .done {
             text-decoration: line-through;
@@ -22,6 +33,8 @@
             margin: auto auto;
             margin-top: 20px;
         }
+=======
+>>>>>>> 640f7b4f2880d61762a59147a24b031383608269
     </style>
 </head>
 <body>
@@ -33,6 +46,7 @@
          
         </section>
         
+<<<<<<< HEAD
        
         <section class="mt-5 mb-5">
             <h2>Lista zadań:</h2>
@@ -42,6 +56,41 @@
             <li data-id="0" onclick="toggleDone()" class="done">Umyj okna <button onclick="removeItem(0)" class="btn btn-sm btn-danger mb-3">x</button></li>
             <li data-id="1" onclick="toggleDone()" class="done">Zakupy <button onclick="removeItem(1)" class="btn btn-sm btn-danger mb-3">x</button></li>
             <li data-id="2" onclick="toggleDone()" class="done">Posprzątać <button onclick="removeItem(2)" class="btn btn-sm btn-danger mb-3">x</button> </li>
+=======
+        <section class="mt-5">
+            <h2>Kalkulator
+
+            </h2>
+        <div>
+
+        <label for="a"> Podaj pierwszą liczbę:</label> <input type="number" id="a">
+
+        <br><br>
+
+        <label for="b"> Podaj drugą liczbę:</label> <input type="number" id="b">
+
+        <br><br>
+            <input type="btn btn-sm btn-primary mb-3" value="DODAWANIE" onclick="suma()">
+
+        <input type="btn btn-sm btn-primary mb-3" value="ODEJMOWANIE">
+
+        <input type="btn btn-sm btn-primary mb-3" value="MNOŻENIE">
+
+        <input type="btn btn-sm btn-primary mb-3" value="DZIELENIE">
+
+        </div>
+    
+        </section>
+       
+        <section class="mt-5 mb-5">
+            <h2>Manipulacja DOM</h2>
+    
+        <p><b>Lista zadań:</b></p>
+        <ul>
+            <li data-id="0">Idź na spacer<button onclick="removeItem(0)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="1">Zakupy <button onclick="removeItem(1)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="2">Posprzątaj <button onclick="removeItem(2)" class="btn btn-sm btn-danger mb-3">x</button> </li>
+>>>>>>> 640f7b4f2880d61762a59147a24b031383608269
         </ul>
     
         <!-- todo: dodac stylowanie -->
@@ -56,18 +105,28 @@
             <button class="btn btn-primary" onclick="addItem()" type="button">Dodaj</button>
         </form>
     
+<<<<<<< HEAD
        
+=======
+        <a href="#">Czytaj więcej</a>
+>>>>>>> 640f7b4f2880d61762a59147a24b031383608269
        </div>
         </section>
   </main>
 
+<<<<<<< HEAD
      <!-- wczytaj skrypty -->
      <script>
+=======
+    <!-- wczytaj skrypty -->
+    <script>
+>>>>>>> 640f7b4f2880d61762a59147a24b031383608269
         function addItem() {
             const ul = document.querySelector('ul');
 
             const input = document.querySelector('#task-title');
             const text = input.value;
+<<<<<<< HEAD
 
             //element id
             const id = Date.now();
@@ -89,6 +148,14 @@
             ul.appendChild(newItem);
 
             // wyczyszczenie inputu
+=======
+            
+            const newItem = document.createElement('li');
+            newItem.innerText = text;
+
+            ul.appendChild(newItem);
+
+>>>>>>> 640f7b4f2880d61762a59147a24b031383608269
             input.value = ''
         }
         
@@ -97,6 +164,7 @@
             const lis = document.querySelectorAll('ul li');
             const li = [...lis].find(el => el.dataset.id == id);
             li.remove();
+<<<<<<< HEAD
     
         }
 
@@ -109,6 +177,11 @@
             li.classList.add('done');
            }
         }
+=======
+            console.log(li);
+        }
+
+>>>>>>> 640f7b4f2880d61762a59147a24b031383608269
 
         </script>
 
