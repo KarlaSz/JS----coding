@@ -63,10 +63,10 @@
                 <input class="form-control" type="text" name="title" id="task-title">
                 <div class="form-text">Dodaj krotki tekst opis zadania</div>
             </div>
-            <button class="btn btn-primary" type="button">Dodaj</button>
+            <button class="btn btn-primary">Dodaj</button>
         </form>
     
-        <a href="https://tworcastron.pl/">Czytaj więcej</a>
+        <a href="#">Czytaj więcej</a>
        </div>
         </section>
   </main>
@@ -76,11 +76,12 @@
 
         // document.querySelector('#add').onclick = addItem
         document.querySelector('#task-form').addEventListener('submit', addItem);
-        document.querySelector('a').addEventListener('click', () => {
-            
-        })
+        document.querySelectorAll('ul li').forEach(li => {
+            li.addEventListener('click', toggleDone)
+        });
 
-        function addItem() {
+        function addItem(e) {
+            e.preventDefault();
             const ul = document.querySelector('ul');
 
             const input = document.querySelector('#task-title');
@@ -102,6 +103,8 @@
             // button.onclick = () => removeItem(id);
             newItem.appendChild(button);
 
+            document.querySelector(`[data-id'="${id}"]`)
+            .addEventListener('click', toggleDone);
             // li > ul
             ul.appendChild(newItem);
 
