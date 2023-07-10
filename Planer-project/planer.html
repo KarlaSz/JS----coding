@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planer zadań</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+ 
+    <style>
+        h1, h2, h3 {
+            font-family: monospace;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: green;
+        }
+
+        body {
+            width: 900px;
+            margin: auto auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+       
+        <section>
+            <h1 class="d-flex justify-content-center">Planer dla twoich notatek &#128223;</h1>
+         
+        </section>
+        
+       
+        <section class="mt-5 mb-5">
+            <h2>Lista zadań:</h2>
+    
+        <p><b>Dodawaj po kolei zadania, aby pamiętać co masz robić:</b></p>
+        <ul>
+            <li data-id="0" onclick="toggleDone()" class="done">Umyj okna <button onclick="removeItem(0)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="1" onclick="toggleDone()" class="done">Zakupy <button onclick="removeItem(1)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="2" onclick="toggleDone()" class="done">Posprzątać <button onclick="removeItem(2)" class="btn btn-sm btn-danger mb-3">x</button> </li>
+        </ul>
+    
+        <!-- todo: dodac stylowanie -->
+        <form class="card card-body bg-light" id="task-form" action="">
+            <div class="mb-2">
+                <label class="form-label" for="task-title">
+                    Nowe zadanie:
+                </label>
+                <input class="form-control" type="text" name="title" id="task-title">
+                <div class="form-text">Dodaj krotki tekst opis zadania</div>
+            </div>
+            <button class="btn btn-primary" onclick="addItem()" type="button">Dodaj</button>
+        </form>
+    
+       
+       </div>
+        </section>
+  </main>
+
+     <!-- wczytaj skrypty -->
+     <script>
+        function addItem() {
+            const ul = document.querySelector('ul');
+
+            const input = document.querySelector('#task-title');
+            const text = input.value;
+
+            //element id
+            const id = Date.now();
+            
+            //li
+            const newItem = document.createElement('li');
+            newItem.innerText = text;
+            newItem.dataset.id = id;
+            newItem.onclick = () => toggleDone();
+
+            //button
+            const button = document.createElement('button');
+            button.className = 'btn btn-sm btn-danger';
+            button.innerText = 'x';
+            button.onclick = () => removeItem(id);
+            newItem.appendChild(button);
+
+            // li > ul
+            ul.appendChild(newItem);
+
+            // wyczyszczenie inputu
+            input.value = ''
+        }
+        
+
+        function removeItem(id) {
+            const lis = document.querySelectorAll('ul li');
+            const li = [...lis].find(el => el.dataset.id == id);
+            li.remove();
+    
+        }
+
+        function toggleDone() {
+           const li = event.target;
+
+           if (li.classList.contains('done')) {
+            li.classList.remove('done');
+           } else {
+            li.classList.add('done');
+           }
+        }
+
+        </script>
+
+
+</body>
+</html>
