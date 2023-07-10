@@ -10,6 +10,11 @@
         h1, h2, h3 {
             font-family: monospace;
         }
+
+        .done {
+            text-decoration: line-through;
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -44,9 +49,9 @@
     
         <p><b>Lista zadań:</b></p>
         <ul>
-            <li data-id="0">Kurs Reach <button onclick="removeItem(0)" class="btn btn-sm btn-danger mb-3">x</button></li>
-            <li data-id="1">Zakupy <button onclick="removeItem(1)" class="btn btn-sm btn-danger mb-3">x</button></li>
-            <li data-id="2">Posprzątać <button onclick="removeItem(2)" class="btn btn-sm btn-danger mb-3">x</button> </li>
+            <li data-id="0" onclick="toggleDone()" class="done">Kurs Reach <button onclick="removeItem(0)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="1" onclick="toggleDone()" class="done">Zakupy <button onclick="removeItem(1)" class="btn btn-sm btn-danger mb-3">x</button></li>
+            <li data-id="2" onclick="toggleDone()" class="done">Posprzątać <button onclick="removeItem(2)" class="btn btn-sm btn-danger mb-3">x</button> </li>
         </ul>
     
         <!-- todo: dodac stylowanie -->
@@ -73,12 +78,27 @@
 
             const input = document.querySelector('#task-title');
             const text = input.value;
+
+            //element id
+            const id = Date.now();
             
+            //li
             const newItem = document.createElement('li');
             newItem.innerText = text;
+            newItem.dataset.id = id;
+            newItem.onclick = () => toggleDone();
 
+            //button
+            const button = document.createElement('button');
+            button.className = 'btn btn-sm btn-danger';
+            button.innerText = 'x';
+            button.onclick = () => removeItem(id);
+            newItem.appendChild(button);
+
+            // li > ul
             ul.appendChild(newItem);
 
+            // wyczyszczenie inputu
             input.value = ''
         }
         
@@ -87,9 +107,18 @@
             const lis = document.querySelectorAll('ul li');
             const li = [...lis].find(el => el.dataset.id == id);
             li.remove();
-            console.log(li);
+    
         }
 
+        function toggleDone() {
+           const li = event.target;
+
+           if (li.classList.contains('done')) {
+            li.classList.remove('done');
+           } else {
+            li.classList.add('done');
+           }
+        }
 
         </script>
 
