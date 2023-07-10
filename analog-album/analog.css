@@ -15,6 +15,10 @@ body {
 }
 
 
+nav {
+    padding: 10px;;
+}
+
 .pic1 {
     width: 12px;
     height: 12px;
@@ -41,7 +45,7 @@ ul {
 
 .container {
     max-width: 1100px;
-    margin:  0 auto;
+    margin:  5px 5px;
     /* padding: 20px 20px; */
 }
 
@@ -275,7 +279,7 @@ h2.formtitle {
     width: 100%;
     height: 100%;
     border-radius: 30px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 
